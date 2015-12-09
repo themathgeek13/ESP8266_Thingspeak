@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 #define SSID "WifiRoad"
-#define PASS "road7231"
+#define PASS "nopepass"
 #define TS_IP "api.thingspeak.com"
 SoftwareSerial dbgSerial(10, 11); // RX, TX
 static char SensorVoltage[15];
@@ -62,7 +62,7 @@ void loop()
  Serial.println(cmd);
  dbgSerial.println(cmd);
  if(Serial.find("Error")) return;
- cmd = "GET /update?api_key=DE1JN1R827IYF0G4&field1=";
+ cmd = "GET /update?api_key=APIKEY&field1=";
  cmd+=dtostrf(Vol,4,2,SensorVoltage);
  cmd+="\r\n\r\n";
  Serial.print("AT+CIPSEND=");
